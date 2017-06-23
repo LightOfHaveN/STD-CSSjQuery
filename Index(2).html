@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Awesome Document</title>
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+  .form-inline .form-control {
+  display: inline-block;
+  margin-right:30px;
+}
+</style>
+
+<body>
+
+<div class="container">
+
+  <!--put form here-->
+  <form class="form-inline" role="form">
+  <h3>Login</h3>
+  <div class="form-group">
+      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+  </div>
+
+  <div class="form-group">  
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+  </div>
+
+
+  <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-login">Login</button>
+  </div>
+
+</form>
+</div>
+<div id="saveModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to login?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-login">Login!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="successModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Yey! Let's pretend your logged in.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('form').submit(function(e) {
+      e.preventDefault();
+      $('#saveModal').modal('show');
+    });
+    $('.btn-login').click(function(e) {
+      e.preventDefault();
+      $('#saveModal').modal('hide');
+      $('#successModal').modal('show');
+    })
+  });
+</script>
+
+</body>
+</html>
